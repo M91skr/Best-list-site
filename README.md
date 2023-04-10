@@ -1,4 +1,4 @@
-## Pick up the Umbrella Reminder
+## Virtual Bookshelf
 
 ## Description
 In this code, a site for registering favorite books is written.
