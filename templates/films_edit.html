@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Rating</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+<form action="{{ url_for('film_edit') }}" method="POST">
+    <label>Your Rate out of 10 e.g. 7.5:</label>
+    <input name="rating" placeholder="New Rating" type="text"><br>
+    <label>Your Review:</label>
+    <input name="review" placeholder="New Review" type="text">
+    <input hidden="hidden" name="fm_id" value="{{ film.id }}">
+    <button type="submit">Done</button>
+</form>
+
+</body>
+</html>

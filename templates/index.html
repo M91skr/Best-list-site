@@ -2,23 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Library</title>
+    <title>My Top</title>
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
 <body>
-<h1>My Library</h1>
-{% if books == []: %}
-<p>Library is empty.</p>
-{% endif %}
-<ul>
-    {% for book in books %}
-    <li>
-        <a href="{{ url_for('delete', id=book.id) }}">Delete</a>
-        {{book.name}} - {{book.author}} - {{book.rating}}/10
-        <a href="{{ url_for('edit_rate', id=book.id) }}">Edit Rate</a>
-    </li>
-    {% endfor %}
-</ul>
-<a href="{{ url_for('add') }}">Add New Book</a>
+    <h1>My favorite Pastimes</h1>
+    <p>I have suggested a number of entertainments on this site.</p><br>
+    <p>you can see:</p>
+    <dl>
+        <dt>My favorite Books.</dt>
+        <dd><a href="{{ url_for('book') }}">My Library</a></dd>
+        <dt>My favorite Films.</dt>
+        <dd><a href="{{ url_for('film') }}">My Cinema</a></dd>
+    </dl>
+
 </body>
 </html>

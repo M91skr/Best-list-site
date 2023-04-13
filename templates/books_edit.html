@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Rating</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
 <body>
 <form action="{{ url_for('edit_rate') }}" method="POST">
     <p>Book Name: {{ book.title }}</p>
     <p>Current Rating {{ book.rating }}</p>
-    <input hidden="hidden" name="id" value="{{ book.id }}">
+    <input hidden="hidden" name="bk_id" value="{{ book.id }}">
     <input name="rating" placeholder="New Rating" type="text">
     <button type="submit">Change Rating</button>
 </form>
+
 </body>
 </html>

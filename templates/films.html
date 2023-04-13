@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cinema</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+<h1>My Cinema</h1>
+{% for film in films %}
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img id="image" src="{{ film.img_url }}">
+            <p class="large">{{ film.ranking }}</p>
+        </div>
+        <div class="flip-card-back">
+            <div class="title">{{film.title}} <span class="release_date">({{film.year}})</span></div>
+            <div class="rating">
+                <label>{{film.rating}}</label>
+                <i class="fas fa-star star"></i>
+            </div>
+            <p class="review">"{{film.review}}"</p>
+            <p class="overview">{{film.description}}</p>
+            <a href="{{ url_for('film_edit', fm_id=film.id) }}" class="button">Update</a>
+            <a href="{{ url_for('film_delete', fm_id=film.id) }}" class="button">Delete</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<a href="{{ url_for('film_add') }}">Add New Movie</a>
+</body>
+</html>

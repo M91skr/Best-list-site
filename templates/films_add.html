@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Films Add</title>
+
+</head>
+<body>
+    <form action="{{ url_for('film_add') }}" method="POST">
+    <label>Movie Title:</label>
+    <input name="title" placeholder="New Title" type="text"><br>
+    <button type="submit">Add Movie</button>
+</form>
+</body>
+</html>
