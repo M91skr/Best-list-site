@@ -160,8 +160,8 @@ def film_delete():
 @app.route("/films/add", methods=["GET", "POST"])
 def film_add():
     if request.method == "POST":
-        new_film = {"title": request.form["title"]}
-        response = requests.get(os.getenv(movie_db_url), params={"api_key": os.getenv(movie_db_key), "query": new_film["title"]})
+        film_title = request.form["title"]
+        response = requests.get(os.getenv(movie_db_url), params={"api_key": os.getenv(movie_db_key), "query": film_title})
         data = response.json()["results"]
         return render_template("select.html", options=data)
     return render_template('films_add.html')
